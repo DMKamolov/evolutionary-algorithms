@@ -1,6 +1,5 @@
 # My workflow: computational tools ↔ GitHub
 
-The assignment asks for two connected workflows. This page documents how each one works for me, with evidence.
 
 ## 1. Claude + VS Code + GitHub
 
@@ -13,12 +12,12 @@ Used for: writing notes, building the playground notebook, and working on my por
 4. Commit and push from VS Code's **Source Control** panel.
 
 **How I use it**
-<!-- Describe a real session, e.g. "I asked Claude to …, it proposed …, I changed … before committing." -->
-_add_
 
-**Evidence**
-<!-- A screenshot of VS Code with the Claude Code panel open on this repo, and links to 1–2 commits made this way. -->
-_add_
+Often with care. Because not everytime we know what we expect, models can make their way through an approval just by sounding too sure about the work they do.
+
+Using it with reference to pictures is also one way of making AI understand your command prompts better. 
+
+Questioning outputs is also one way of making sure that you do not fall into the trap of hullicantion. 
 
 ## 2. Gemini + Colab + GitHub
 
@@ -29,13 +28,6 @@ Used for: running and experimenting with notebooks in Colab.
 2. **Gemini in Colab:** use the Gemini button in Colab to explain a cell, debug an error, or draft code.
 3. **Colab → GitHub:** **File → Save a copy in GitHub**, choose this repo and the notebook's path, and write a commit message.
 
-**How I use it**
-<!-- Describe a real session, e.g. "I asked Gemini why my bisection loop never ended; it pointed out …" -->
-_add_
-
-**Evidence**
-<!-- A screenshot of Gemini in Colab on one of these notebooks, and a link to a commit made with "Save a copy in GitHub". -->
-_add_
 
 ## Where each tool fits
 

@@ -1,6 +1,6 @@
 # Class code · weeks 2–3
 
-The notebooks we ran in class, saved unchanged. My own experiments live one folder up in [`playground.ipynb`](../playground.ipynb), so it's always clear what came from class and what I built.
+These are the notebooks we ran in class. My own experiments live one folder up in [`playground.ipynb`](../playground.ipynb).
 
 | Notebook | What it covers |
 |---|---|

@@ -1,14 +1,10 @@
 # Weeks 2–3 · Classic optimization for finding min/max
 
-**Source:** DCS 340 lecture slides, "Classic optimization methods: selected few" (18 slides). The opening slide frames these methods using a 2020 review in *H2Open Journal* on evolutionary and swarm algorithms in water resources engineering ([doi:10.2166/h2oj.2020.128](https://doi.org/10.2166/h2oj.2020.128)).
-
-**Class code:** [`01-classic-optimization-1d`](class-code/01-classic-optimization-1d.ipynb) (a pumpkin fired from a cannon) and [`02-multivariable-optimization`](class-code/02-multivariable-optimization.ipynb) (a surveyor looking for the lowest point in a valley).
-
-**Companion notebook:** [`playground.ipynb`](playground.ipynb) runs every method below from scratch, pushes each one until it breaks, and answers both class notebooks' "Try it yourself" challenges.
+**Source:** DCS 340 lecture slides and class notes.
 
 ---
 
-## The one idea behind all of it
+## Methods
 
 Every method in this unit answers the same question: *where is the function flattest?* A smooth function's maximum or minimum sits where its derivative (or, in 2D, its gradient) is zero. The methods differ in **how much information about the function they use** to get there:
 
@@ -133,35 +129,19 @@ The triangle tumbles, stretches, and shrinks its way down into the valley. The c
 
 ### What I studied on my own
 
-<!-- The rubric asks for evidence of videos, DataCamp, and math you studied to understand the material. Add real entries only. -->
 
 | Resource | Type | What it helped me understand |
 |---|---|---|
-| _add_ | _video / DataCamp / article / textbook_ | _one or two sentences_ |
 
-### Math this unit relies on
+**Videos**
+ 
+| Resource | What it covers | Connects to 
+|---|---|---|---|
+| [Gradient descent, how neural networks learn](https://www.youtube.com/watch?v=IHZwWFHWa-w) (3Blue1Brown, 21 min) | Gradient descent as walking downhill on a cost surface, and the gradient as the direction of steepest ascent in many dimensions | [Gradient descent](#3-gradient-descent-and-ascent); playground section 5 
+| [Gradient Descent, Step-by-Step](https://www.youtube.com/watch?v=sDv4f4s2SB8) (StatQuest, 24 min) | Works gradient descent by hand: step size = learning rate × slope, so steps shrink as the slope flattens | Playground section 4 (learning rate) 
+| [Newton's Method in Optimization](https://www.youtube.com/watch?v=W7S94pq5Xuo) (Visually Explained) | The intuition of fitting a local quadratic and jumping to its minimum, plus the method's pros and cons | [Newton's method](#4-newtons-method); playground sections 6–7
 
-| Concept | Where it shows up | My notes |
-|---|---|---|
-| First-order Taylor expansion (tangent line) | Deriving Newton's update | _add_ |
-| Partial derivatives and the gradient | Gradient descent in 2D | _add_ |
-| The Hessian and its eigenvalues | Newton in 2D; why gradient descent needs $\alpha < 2/\lambda_{\max}$ | _add_ |
-
----
-
-## Errata: things on the slides that don't check out
-
-I verified these numerically in the [notebook](playground.ipynb) (section 1).
-
-1. **The 2D minimum is at $(14/3, 16/3) \approx (4.67, 5.33)$, not $(2.33, 2.67)$.** The Nelder–Mead slide (8) and the 2D Newton slide (17) both state $(2.33, 2.67)$. Solving $\nabla g = 0$ gives $2x - y = 4$ and $-x + 2y = 6$, so $x = 14/3$ and $y = 16/3$. Running SciPy's Nelder–Mead also returns $(4.67, 5.33)$, and $g(4.67, 5.33) = -12.33$ is lower than $g(2.33, 2.67) = -6$. The 2D gradient descent slide (12) has the correct point, and so does the class's own multivariable notebook: its Nelder–Mead and Newton cells both print $(4.67, 5.33)$.
-2. **Newton on $f(x) = 4 - (x-2)^2$ converges to $x = 2$, not $x = 0$.** Slide 15's own derivation ends with $x_{n+1} = 2$, but the conclusion line says $x = 0$.
-3. **Slide 15's condition should read $f''(x) \neq 0$** (the "≠" symbol is missing).
-
----
 
 ## Open questions
-
-<!-- Write your own. Some starters: -->
 - How do libraries like PyTorch choose a learning rate, since picking $\alpha$ by hand is so fragile?
 - Quasi-Newton methods (like BFGS) approximate the Hessian instead of computing it. How good is that approximation?
-- The source paper is about *evolutionary* and *swarm* methods. When do those beat everything on this page?
